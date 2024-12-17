@@ -1,0 +1,32 @@
+button{
+  cursor: pointer;
+  height: 35px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: aqua;
+  color: red;
+  font-size: larger;
+  font-weight: bold;
+}
+button:hover{
+  height: 40px;
+  box-shadow: 5px 5px 1px 1px red;
+}
+body{
+  background-color: peachpuff;
+}
+li, #ad{
+  font-size: larger;
+  font-weight: bold;
+}
+#main{
+  display: flex;
+  justify-content: space-around;
+}
+#ad{
+  color: red;
+}
+h2{
+  color: blue;
+  text-decoration: underline;
+}
