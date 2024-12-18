@@ -1,21 +1,25 @@
 button{
   cursor: pointer;
   height: 35px;
+  width: 60px;
   margin-bottom: 20px;
   margin-top: 20px;
   background-color: aqua;
   color: red;
   font-size: larger;
   font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px black;
 }
 button:hover{
   height: 40px;
-  box-shadow: 5px 5px 1px 1px red;
+  box-shadow: 3px 3px 1px 1px red;
 }
 body{
   background-color: peachpuff;
 }
-li, #ad{
+li, #ad, #add, #addd{
   font-size: larger;
   font-weight: bold;
 }
@@ -23,10 +27,24 @@ li, #ad{
   display: flex;
   justify-content: space-around;
 }
-#ad{
+#ad, #add, #addd{
   color: red;
 }
 h2{
   color: blue;
   text-decoration: underline;
+}
+#inp, #inp1, #inpp{
+  width: 200px;
+  height: 35px;
+  margin-top: 8px;
+  background-color: aqua;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 1px 1px black;
+}
+h1{
+  text-align: center;
+  text-decoration: underline;
+  color: red;
 }

@@ -1,11 +1,15 @@
 import Appp from './list'
+import Listt from './list1'
+import List1 from './list2'
 
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Appp />
-    </div>
+      <Listt />
+      <List1 />
+    </>
   );
 }
 

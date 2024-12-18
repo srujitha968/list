@@ -3,25 +3,25 @@ import './App.css'
 
 function List() {
 
-    const [list, setlist]=useState(["Virat Kohli","Jasprit Bumrah","M.S.Dhoni"])
+    const [list, setlist]=useState(["Red","Black"])
     const [undo, setundo]=useState(false)
     const [rem, setrem]=useState("")
 
     function green(){
-        var a=document.getElementById('inp').value
-        if(a===""){
-            alert("Write Something")
+        const aaa=document.getElementById('inpp').value
+        if(aaa===""){
+            alert("Write a Color")
         }
         else{
-        setlist([...list,a])
-        let b=document.getElementById('inp')
-        b.value=""}
+        setlist([...list,aaa])
+        let bbb=document.getElementById('inpp')
+        bbb.value=""}
     }
     function remove(){
         const re=list.pop()
         setlist([...list])
         let ele=document.createElement("div")
-        const a=document.getElementById("ad")
+        const a=document.getElementById("addd")
         ele.innerHTML="you just now deleted: "+re
         a.append(ele)
         setrem(re)
@@ -29,7 +29,7 @@ function List() {
         setTimeout(()=>{setundo(false)},4000)
     }
     function restore(){
-        let d=document.getElementById("ad")
+        let d=document.getElementById("addd")
         d.remove(rem)
         setlist([...list,rem])
         setrem("")
@@ -37,11 +37,11 @@ function List() {
     }
   return (
     <div>
-        <h1>Cricket Players</h1>
+        <h1>For Colors</h1>
         <div id="main">
         <div>
             <center>
-        <input type='text' placeholder='Enter a player name' id='inp'></input><br/>
+        <input type='text' placeholder='Enter a color' id='inpp'></input><br/>
         <button onClick={green}>Add </button> &nbsp; &nbsp;
         <button onClick={remove}>Del</button>
         {list.map((x,index)=><li key={index}>{x}</li>)}
@@ -49,13 +49,12 @@ function List() {
         </div>
         <div>
             <center>
-            <h2>Removed Elements </h2>
-            <div id="ad"></div>
+            <h2>Removed Colors</h2>
+            <div id="addd"></div>
             {undo && (<button onClick={restore} style={{ marginTop:'10px'}}>Undo</button>)}
             </center>
         </div>
         </div>
-        <hr/>
     </div>
   )
 }
