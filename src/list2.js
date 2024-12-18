@@ -20,20 +20,15 @@ function List() {
     function remove(){
         const re=list.pop()
         setlist([...list])
-        let ele=document.createElement("div")
-        const a=document.getElementById("addd")
-        ele.innerHTML="you just now deleted: "+re
-        a.append(ele)
         setrem(re)
         setundo(true)
         setTimeout(()=>{setundo(false)},4000)
     }
     function restore(){
-        let d=document.getElementById("addd")
-        d.remove(rem)
+        if(rem!==null){
         setlist([...list,rem])
         setrem("")
-        setundo(false)
+        setundo(false)}
     }
   return (
     <div>
@@ -50,7 +45,7 @@ function List() {
         <div>
             <center>
             <h2>Removed Colors</h2>
-            <div id="addd"></div>
+            {rem && <div id="addd">you just deleted: {rem}</div>}
             {undo && (<button onClick={restore} style={{ marginTop:'10px'}}>Undo</button>)}
             </center>
         </div>

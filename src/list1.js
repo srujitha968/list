@@ -20,20 +20,15 @@ function List1() {
     function remove1(){
         const re=list.pop()
         setlist([...list])
-        let ele=document.createElement("div")
-        const a=document.getElementById("add")
-        ele.innerHTML="you just now deleted: "+re
-        a.append(ele)
         setrem(re)
         setundo(true)
         setTimeout(()=>{setundo(false)},4000)
     }
     function restore(){
-        let d=document.getElementById("add")
-        d.remove(rem)
+        if(rem!==null){
         setlist([...list,rem])
         setrem("")
-        setundo(false)
+        setundo(false)}
     }
     
   return (
@@ -52,7 +47,7 @@ function List1() {
         <div>
             <center>
             <h2>Deleted Movies</h2>
-            <div id="add"></div>
+            {rem && <div id="add">you just deleted: {rem}</div>}
             {undo && (<button onClick={restore} style={{ marginTop:'10px'}}>Undo</button>)}
             </center>
         </div>
